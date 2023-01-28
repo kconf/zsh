@@ -180,3 +180,19 @@ lm() {
 }
 # Patch Android Studio to avoid case-sensitive warning
 alias intellij-case-patch='printf '\''\nidea.case.sensitive.fs=true'\'' >> /Applications/Android\ Studio.app/Contents/bin/idea.properties'
+
+# vcsh helper
+vcsh2mr() {
+    local pkg=$1
+    echo "[\$HOME/.config/vcsh/repo.d/$pkg.git]"
+    echo "checkout = vcsh clone 'git://github.com/kconf/$pkg.git' '$pkg'"
+    echo "update   = vcsh $pkg pull"
+    echo "push     = vcsh $pkg push"
+    echo "status   = vcsh $pkg status"
+    echo "gc       = vcsh $pkg gc"
+}
+
+vcshremote() {
+    vcsh $1 remote add -f origin git@github.com:kconf/$1.git
+}
+
