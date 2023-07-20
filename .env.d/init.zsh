@@ -202,11 +202,15 @@ pd() {
     local tmpl=${2:-pdf}
     local fmt=${tmpl:r}
     local defaults=$HOME/.config/pandoc/defaults/${tmpl}.yaml
+    local opts=()
     if [[ -f $defaults ]]; then
-        pandoc -d $defaults $1 -o ${1:r}.${fmt}
-    else
-        pandoc $opts $1 -o ${1:r}.${fmt}
+        opts+=(-d $defaults)
+        echo $opts
     fi
+    if [[ $fmt = docx && -f reference.docx ]]; then
+        opts+=(--reference-doc=reference.docx)
+    fi
+    pandoc $opts $1 -o ${1:r}.${fmt}
 }
 
 # Patch Android Studio to avoid case-sensitive warning
