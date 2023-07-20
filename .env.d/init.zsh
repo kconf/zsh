@@ -87,6 +87,24 @@ _p() {
 }
 compdef _p p
 
+ppp() {
+    local e=$(networksetup -getwebproxy wi-fi | grep "No")
+
+    local ns=wi-fi
+    local st=''
+    if [ -n "$e" ]; then
+      st=on
+    else
+      st=off
+    fi
+
+    echo "Turning $st proxy"
+    networksetup -setstreamingproxystate $ns $st
+    networksetup -setsocksfirewallproxystate $ns $st
+    networksetup -setwebproxystate $ns $st
+    networksetup -setsecurewebproxystate  $ns $st
+}
+
 # Config management
 c() {
   if (( $# < 2 )); then
