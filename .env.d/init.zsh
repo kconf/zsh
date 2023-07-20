@@ -196,6 +196,19 @@ alias rr=ranger
 lm() {
     labelme $1 -O ${1:r}.json
 }
+
+# Pandoc
+pd() {
+    local tmpl=${2:-pdf}
+    local fmt=${tmpl:r}
+    local defaults=$HOME/.config/pandoc/defaults/${tmpl}.yaml
+    if [[ -f $defaults ]]; then
+        pandoc -d $defaults $1 -o ${1:r}.${fmt}
+    else
+        pandoc $opts $1 -o ${1:r}.${fmt}
+    fi
+}
+
 # Patch Android Studio to avoid case-sensitive warning
 alias intellij-case-patch='printf '\''\nidea.case.sensitive.fs=true'\'' >> /Applications/Android\ Studio.app/Contents/bin/idea.properties'
 
