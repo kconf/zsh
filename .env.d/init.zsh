@@ -87,6 +87,11 @@ _p() {
 }
 compdef _p p
 
+setup-proxy() {
+    networksetup -setwebproxy "Wi-fi" 127.0.0.1 8889
+    networksetup -setsecurewebproxy "Wi-fi" 127.0.0.1 8889
+}
+
 ppp() {
     local e=$(networksetup -getwebproxy wi-fi | grep "No")
 
@@ -205,11 +210,11 @@ pd() {
     local opts=()
     if [[ -f $defaults ]]; then
         opts+=(-d $defaults)
-        echo $opts
     fi
     if [[ $fmt = docx && -f reference.docx ]]; then
         opts+=(--reference-doc=reference.docx)
     fi
+    echo pandoc $opts $1 -o ${1:r}.${fmt}
     pandoc $opts $1 -o ${1:r}.${fmt}
 }
 
