@@ -26,6 +26,7 @@ typeset -gU cdpath fpath mailpath path
 
 # Set the list of directories that Zsh searches for programs.
 path=(
+  $HOME/.local/bin
   /usr/local/{bin,sbin}
   /usr/{bin,sbin}
   /{bin,sbin}
@@ -44,6 +45,3 @@ unset env_file
 
 # Skip the not really helping Ubuntu global compinit
 skip_global_compinit=1
-
-# Created by `pipx` on 2022-12-08 02:41:15
-export PATH="$PATH:/Users/hjw/.local/bin"

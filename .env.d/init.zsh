@@ -70,7 +70,7 @@ alias n=nvim
 
 # Proxy using clash
 p() {
-  local http_port=8889
+  local http_port=7890
   local socks_port=1089
   if (( $# == 0 )); then
     unset http_proxy https_proxy all_proxy no_proxy GIT_SSH_COMMAND
@@ -225,7 +225,7 @@ alias intellij-case-patch='printf '\''\nidea.case.sensitive.fs=true'\'' >> /Appl
 vcsh2mr() {
     local pkg=$1
     echo "[\$HOME/.config/vcsh/repo.d/$pkg.git]"
-    echo "checkout = vcsh clone 'git://github.com/kconf/$pkg.git' '$pkg'"
+    echo "checkout = vcsh clone 'https://github.com/kconf/$pkg.git' '$pkg'"
     echo "update   = vcsh $pkg pull"
     echo "push     = vcsh $pkg push"
     echo "status   = vcsh $pkg status"
