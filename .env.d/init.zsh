@@ -88,8 +88,8 @@ _p() {
 compdef _p p
 
 setup-proxy() {
-    networksetup -setwebproxy "Wi-fi" 127.0.0.1 8889
-    networksetup -setsecurewebproxy "Wi-fi" 127.0.0.1 8889
+    networksetup -setwebproxy "Wi-fi" 127.0.0.1 7890
+    networksetup -setsecurewebproxy "Wi-fi" 127.0.0.1 7890
 }
 
 ppp() {
