@@ -25,16 +25,13 @@ alias la='ls -a'
 
 # Fuzzy finder
 if (( $+commands[fzf] )); then
-  case "$OSTYPE" in
-    darwin*)
-      source "/usr/local/opt/fzf/shell/completion.zsh"
-      source "/usr/local/opt/fzf/shell/key-bindings.zsh"
-      ;;
-    linux*)
-      source "/usr/share/fzf/completion.zsh"
-      source "/usr/share/fzf/key-bindings.zsh"
-      ;;
-  esac
+  for zconfd in "/usr/local/opt/fzf/shell" "/usr/share/fzf" "/usr/share/doc/fzf/examples"; do
+    if [[ -f $zconfd/completion.zsh && -f $zconfd/key-bindings.zsh ]]; then
+      source $zconfd/completion.zsh
+      source $zconfd/key-bindings.zsh
+      break
+    fi
+  done
 
   export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git'
   export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
