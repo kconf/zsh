@@ -50,21 +50,6 @@ zz() {
 alias g=git
 
 # Editors
-e() {
-  zparseopts -D t=o_tty
-
-  if [[ $o_tty == '-t' || ! -v DISPLAY ]]; then
-    emacsclient -t "$@"
-  else
-    if (( $(emacsclient -n -e "(length (frame-list))") > 1 )); then
-      emacsclient -nq "$@" &> /dev/null
-    else
-      emacsclient -nqc "$@" &> /dev/null
-    fi
-  fi
-}
-
-alias et='e -t'
 alias v=vim
 alias n=nvim
 
