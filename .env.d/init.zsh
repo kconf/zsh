@@ -60,8 +60,8 @@ p() {
     export http_proxy=http://$1:$http_port https_proxy=http://$1:$http_port all_proxy=socks5://$1:$socks_port
     export no_proxy="localhost,*.local,127.0.0.1,10.0.0.0/8,172.16.0.0/12,192.168.0.0/16,::1,fe80::/10"
     export GIT_SSH_COMMAND="ssh -o 'ProxyCommand=nc -x $1:$socks_port %h %p'"
+    env | grep proxy
   fi
-  env | grep proxy
 }
 
 _p() {
