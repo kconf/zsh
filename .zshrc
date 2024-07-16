@@ -24,7 +24,8 @@ setopt HIST_FCNTL_LOCK           # Use fcntl() locks to ensure that only one she
 setopt HIST_IGNORE_DUPS          # Do not record an event that was just recorded again.
 setopt HIST_FIND_NO_DUPS         # Do not display a previously found event.
 
-setopt SHARE_HISTORY             # Share history between all sessions.
+# This option will add a timestamp to each history entry.
+# setopt SHARE_HISTORY             # Share history between all sessions.
 #: }}}
 
 #: User scripts {{{
@@ -35,16 +36,16 @@ unset env_file
 #: }}}
 
 #: Aliases {{{
-alias -- 'e'='nvim'
-alias -- 'f'='nnn -a'
-alias -- 'g'='git'
-alias -- 'la'='eza -a'
-alias -- 'll'='eza -l'
-alias -- 'lla'='eza -la'
-alias -- 'ls'='eza'
-alias -- 'lt'='eza --tree'
-alias -- 'o'='xdg-open'
-alias -- 'rm'='trash'
+alias e='nvim'
+alias f='nnn -a'
+alias g='git'
+alias la='eza -a'
+alias ll='eza -l'
+alias lla='eza -la'
+alias ls='eza'
+alias lt='eza --tree'
+alias o='xdg-open'
+alias rm='echo "This is not the command you are looking for."; false'
 #: }}}
 
 #: Plugins {{{
@@ -59,5 +60,4 @@ eval "$(zoxide init zsh )"
 if [[ $options[zle] = on ]]; then
   eval "$(fzf --zsh)"
 fi
-
 #: }}}
