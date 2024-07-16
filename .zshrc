@@ -47,3 +47,17 @@ alias -- 'o'='xdg-open'
 alias -- 'rm'='trash'
 #: }}}
 
+#: Plugins {{{
+eval "$(sheldon source)"
+
+if [[ $TERM != "dumb" ]]; then
+  eval "$(starship init zsh)"
+fi
+
+eval "$(zoxide init zsh )"
+
+if [[ $options[zle] = on ]]; then
+  eval "$(fzf --zsh)"
+fi
+
+#: }}}
