@@ -39,6 +39,7 @@ unset env_file
 alias e='nvim'
 alias f='nnn -a'
 alias g='git'
+alias lg='lazygit'
 alias la='eza -a'
 alias ll='eza -l'
 alias lla='eza -la'
