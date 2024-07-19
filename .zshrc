@@ -25,7 +25,7 @@ setopt HIST_IGNORE_DUPS          # Do not record an event that was just recorded
 setopt HIST_FIND_NO_DUPS         # Do not display a previously found event.
 
 # This option will add a timestamp to each history entry.
-# setopt SHARE_HISTORY             # Share history between all sessions.
+setopt SHARE_HISTORY             # Share history between all sessions.
 #: }}}
 
 #: User scripts {{{
