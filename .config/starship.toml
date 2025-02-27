@@ -1,0 +1,6 @@
+[custom.proxy]
+description = "Display proxy status"
+command = "if [ -n \"$http_proxy\" ] || [ -n \"$https_proxy\" ] || [ -n \"$all_proxy\" ]; then echo '󱘖'; else echo ''; fi"
+when = "true"
+format = "[$output]($style) "
+style = "bold yellow"

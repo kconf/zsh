@@ -46,7 +46,6 @@ alias lla='eza -la'
 alias ls='eza'
 alias lt='eza --tree'
 alias o='xdg-open'
-alias rm='echo "This is not the command you are looking for."; false'
 #: }}}
 
 #: Plugins {{{
