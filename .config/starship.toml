@@ -1,9 +1,8 @@
-[custom.wezterm_status]
+[custom.wezterm_connect]
 description = "Display wezterm connection status"
-command = "echo $HOST"
-symbol = "⛵ "
+command = 'echo "$USER in ⛵ $HOST"'
 when = '[[ "$WEZTERM_EXECUTABLE" =~ "wezterm-mux-server" ]]'
-format = "[$symbol$output]($style) "
+format = "[$output]($style) "
 style = "bold blue"
 
 [custom.proxy]
