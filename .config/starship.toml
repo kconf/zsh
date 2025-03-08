@@ -1,6 +1,14 @@
+[custom.wezterm_status]
+description = "Display wezterm connection status"
+command = "echo $HOST"
+symbol = "⛵ "
+when = '[[ "$WEZTERM_EXECUTABLE" =~ "wezterm-mux-server" ]]'
+format = "[$symbol$output]($style) "
+style = "bold blue"
+
 [custom.proxy]
 description = "Display proxy status"
-command = "if [ -n \"$http_proxy\" ] || [ -n \"$https_proxy\" ] || [ -n \"$all_proxy\" ]; then echo '󱘖'; else echo ''; fi"
-when = "true"
-format = "[$output]($style) "
+symbol = "🚀 "
+when = '[ -n "$http_proxy" ]'
+format = "[$symbol]($style) "
 style = "bold yellow"
