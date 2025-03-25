@@ -4,19 +4,24 @@
 # .zshenv is sourced on all invocations of the shell, unless the -f option is set.
 # It should contain commands to set the command search path, plus other important environment variables.
 
-# Paths
-typeset -gU cdpath fpath mailpath path
+if [[ -z "$ZSHENV_LOADED" ]]; then
+  # Avoid loading this file more than once
+  export ZSHENV_LOADED=1
 
-# Set the list of directories that Zsh searches for programs.
-path=(
-  $HOME/.local/bin
-  /usr/local/{bin,sbin}
-  /usr/{bin,sbin}
-  /{bin,sbin}
-  $path
-)
+  # Paths
+  typeset -gU cdpath fpath mailpath path
 
-# Language
-if [[ -z "$LANG" ]]; then
-  export LANG='en_US.UTF-8'
+  # Set the list of directories that Zsh searches for programs.
+  path=(
+    $HOME/.local/bin
+    /usr/local/{bin,sbin}
+    /usr/{bin,sbin}
+    /{bin,sbin}
+    $path
+  )
+
+  # Language
+  if [[ -z "$LANG" ]]; then
+    export LANG='en_US.UTF-8'
+  fi
 fi
