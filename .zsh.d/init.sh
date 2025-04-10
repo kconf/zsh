@@ -8,7 +8,7 @@ clone() { gh repo clone $1 $HOME/Dev/github.com/$1 }
 
 
 proxy_on() {
-	export no_proxy="localhost,127.0.0.1,192.168.0.0/16,localaddress,.localdomain.com"
+	export no_proxy="localhost,127.0.0.1,::1,192.168.0.0/16,localaddress,.localdomain.com"
 
 	local proxy=$1
 	export http_proxy="$proxy" \
