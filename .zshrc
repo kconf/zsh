@@ -61,3 +61,13 @@ if [[ $options[zle] = on ]]; then
   eval "$(fzf --zsh)"
 fi
 #: }}}
+
+#: Autocomplete {{{
+autoload -Uz compinit
+compinit
+
+zstyle ':completion:*' menu select          # 使用菜单选择补全项
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"  # 颜色支持
+zstyle ':completion:*' group-name ''       # 对补全项分组
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'  # 不区分大小写
+#: }}}
