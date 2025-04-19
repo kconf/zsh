@@ -63,6 +63,8 @@ fi
 #: }}}
 
 #: Autocomplete {{{
+fpath=($HOME/.zsh.d/completions $fpath)  # Add custom completions to fpath
+
 autoload -Uz compinit
 compinit
 
