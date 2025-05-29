@@ -37,15 +37,14 @@ unset env_file
 
 #: Aliases {{{
 alias e='nvim'
-alias f='nnn -a'
 alias g='git'
-alias lg='lazygit'
 alias la='eza -a'
 alias ll='eza -l'
 alias lla='eza -la'
 alias ls='eza'
 alias lt='eza --tree'
 alias o='xdg-open'
+alias open='xdg-open'
 #: }}}
 
 #: Plugins {{{
