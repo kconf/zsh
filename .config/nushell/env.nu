@@ -17,14 +17,27 @@
 # You can remove these comments if you want or leave
 # them for future reference.
 
+def save_if_not_exists [
+    data: any        # 要保存的数据
+    path: string     # 目标文件路径
+] {
+    if not ($path | path exists) {
+        $data | save --force $path
+        $"File saved to ($path)"
+    } else {
+        $"File ($path) already exists, skipping save."
+    }
+}
+
+# Create vendor autoload directory
+let vendor_autoload = ($nu.data-dir | path join "vendor/autoload")
+mkdir $vendor_autoload
+
 # carapace
-$env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
-mkdir ~/.cache/carapace
-carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+carapace _carapace nushell | save -f ($vendor_autoload | path join "carapace.nu")
 
 # zoxide
-zoxide init nushell | save -f ~/.zoxide.nu
+# zoxide init nushell | save -f ($vendor_autoload | path join "zoxide.nu")
 
 # atuin
-mkdir ~/.local/share/atuin/
-atuin init nu | save ~/.local/share/atuin/init.nu
+atuin init nu | save -f ($vendor_autoload | path join "atuin.nu")

@@ -17,10 +17,6 @@
 # You can remove these comments if you want or leave
 # them for future reference.
 
-source ~/.cache/carapace/init.nu
-source ~/.zoxide.nu
-source ~/.local/share/atuin/init.nu
-
 def --env f [...args] {
 	let tmp = (mktemp -t "yazi-cwd.XXXXXX")
 	yazi ...$args --cwd-file $tmp
