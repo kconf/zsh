@@ -1,3 +1,8 @@
+[directory]
+# Set to false to show the full path, ignoring the repository root
+truncate_to_repo = false
+repo_root_style = 'red'
+
 [custom.wezterm_connect]
 description = "Display wezterm connection status"
 command = 'echo "$USER in ⛵ $HOST"'

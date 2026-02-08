@@ -1,3 +1,10 @@
+# OPENSPEC:START
+# OpenSpec shell completions configuration
+fpath=("/home/hjw/.zsh/completions" $fpath)
+autoload -Uz compinit
+compinit
+# OPENSPEC:END
+
 # vim:foldmethod=marker
 
 #: Core {{{
@@ -5,7 +12,7 @@ export EDITOR='nvim'
 export VISUAL='nvim'
 export PAGER='less'
 # Set the default Less options.
-export LESS='-F -g -i -M -R -S -w -X -z-4'
+export LESS='-F -g -i -M -R -S -w -X'
 
 cdpath+=($HOME)
 #: }}}
