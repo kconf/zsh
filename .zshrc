@@ -52,7 +52,6 @@ alias ls='eza'
 alias lt='eza --tree'
 alias o='xdg-open'
 alias open='xdg-open'
-alias rm='echo "Use trash instead. This is not the command you are looking for."; false'
 #: }}}
 
 #: Plugins {{{
