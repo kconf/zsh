@@ -16,10 +16,12 @@ shell = "zsh"
 
 [plugins.zsh-autosuggestions]
 github = "zsh-users/zsh-autosuggestions"
-use = ["{{ name }}.zsh"]
 
 [plugins.fast-syntax-highlighting]
 github = "zdharma-continuum/fast-syntax-highlighting"
+
+[plugins.zsh-claude-code-shell]
+github = "ArielTM/zsh-claude-code-shell"
 
 # For example:
 #
