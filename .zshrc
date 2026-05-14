@@ -15,7 +15,6 @@ HISTSIZE=10000
 SAVEHIST=10000
 
 HISTFILE="$HOME/.zsh_history"
-mkdir -p $(dirname $HISTFILE)
 
 setopt HIST_FCNTL_LOCK           # Use fcntl() locks to ensure that only one shell writes the history file at a time.
 
@@ -38,13 +37,11 @@ unset env_file
 #: Aliases {{{
 alias e='nvim'
 alias g='git'
+alias ls='eza'
 alias la='eza -a'
 alias ll='eza -l'
 alias lla='eza -la'
-alias ls='eza'
-alias lt='eza --tree'
 alias o='xdg-open'
-alias open='xdg-open'
 #: }}}
 
 #: Plugins {{{

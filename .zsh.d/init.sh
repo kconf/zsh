@@ -1,10 +1,10 @@
 #!/usr/bin/env zsh
 
-cht() { curl cht.sh/$* }
+cht() { curl -- "cht.sh/$*"; }
 
-qr() { curl qrenco.de/$* }
+qr() { curl -- "qrenco.de/$*"; }
 
-clone() { gh repo clone $1 $HOME/Dev/github.com/$1 }
+clone() { gh repo clone -- "$1" "$HOME/Dev/github.com/$1"; }
 
 proxy() {
 	local default_proxy="http://localhost:7890"
