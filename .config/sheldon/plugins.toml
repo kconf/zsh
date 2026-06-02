@@ -20,9 +20,6 @@ github = "zsh-users/zsh-autosuggestions"
 [plugins.fast-syntax-highlighting]
 github = "zdharma-continuum/fast-syntax-highlighting"
 
-[plugins.zsh-claude-code-shell]
-github = "ArielTM/zsh-claude-code-shell"
-
 # For example:
 #
 # [plugins.base16]

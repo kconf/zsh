@@ -37,7 +37,6 @@ unset env_file
 #: Aliases {{{
 alias e='nvim'
 alias g='git'
-alias ls='eza'
 alias la='eza -a'
 alias ll='eza -l'
 alias lla='eza -la'
