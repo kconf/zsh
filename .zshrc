@@ -37,6 +37,8 @@ unset env_file
 #: Aliases {{{
 alias e='nvim'
 alias g='git'
+alias ls='ls --color=auto'
+alias lt='eza --tree'
 alias la='eza -a'
 alias ll='eza -l'
 alias lla='eza -la'
@@ -68,3 +70,5 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"  # 颜色支持
 zstyle ':completion:*' group-name ''       # 对补全项分组
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'  # 不区分大小写
 #: }}}
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
