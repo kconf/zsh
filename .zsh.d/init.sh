@@ -7,7 +7,7 @@ qr() { curl -- "qrenco.de/$*"; }
 clone() { gh repo clone -- "$1" "$HOME/Dev/github.com/$1"; }
 
 proxy() {
-	local default_proxy="http://localhost:7890"
+	local default_proxy="${PROXY_URL:-http://localhost:7890}"
 	
 	case "$1" in
 		"on")
