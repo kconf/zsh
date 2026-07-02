@@ -60,7 +60,7 @@ fi
 #: }}}
 
 #: Autocomplete {{{
-fpath=($HOME/.zsh.d/completions $fpath)  # Add custom completions to fpath
+fpath=($HOME/.zfunc $fpath)  # Add custom completions to fpath
 
 autoload -Uz compinit
 compinit
@@ -70,5 +70,3 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"  # 颜色支持
 zstyle ':completion:*' group-name ''       # 对补全项分组
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'  # 不区分大小写
 #: }}}
-
-fpath+=~/.zfunc; autoload -Uz compinit; compinit
