@@ -4,6 +4,16 @@ cht() { curl -- "cht.sh/$*"; }
 
 qr() { curl -- "qrenco.de/$*"; }
 
+barcode() {
+  zint -b CODE128 \
+    -d "$*" \
+    --filetype=PNG \
+    --direct \
+    --height=30 \
+    --scale=2 |
+    chafa --format=kitty -
+}
+
 clone() { gh repo clone -- "$1" "$HOME/Dev/github.com/$1"; }
 
 proxy() {
