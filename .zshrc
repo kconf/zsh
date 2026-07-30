@@ -46,24 +46,28 @@ alias o='xdg-open'
 #: }}}
 
 #: Plugins {{{
-eval "$(sheldon source)"
+# eval "$(sheldon source)"
 
-if [[ $TERM != "dumb" ]]; then
-  eval "$(starship init zsh)"
-fi
+# eval "$(iris init zsh)"
+
+export DEJA_CYCLE_KEY=''
+eval "$(deja init zsh)"
+
+eval "$(zsh-patina activate)"
+
+eval "$(starship init zsh)"
 
 eval "$(zoxide init zsh )"
 
-if [[ $options[zle] = on ]]; then
-  eval "$(fzf --zsh)"
-fi
+eval "$(fzf --zsh)"
+
+eval "$(direnv hook zsh)"
 #: }}}
 
 #: Autocomplete {{{
 fpath=($HOME/.zfunc $fpath)  # Add custom completions to fpath
 
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
 
 zstyle ':completion:*' menu select          # 使用菜单选择补全项
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"  # 颜色支持
