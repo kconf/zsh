@@ -45,25 +45,6 @@ alias lla='eza -la'
 alias o='xdg-open'
 #: }}}
 
-#: Plugins {{{
-# eval "$(sheldon source)"
-
-# eval "$(iris init zsh)"
-
-export DEJA_CYCLE_KEY=''
-eval "$(deja init zsh)"
-
-eval "$(zsh-patina activate)"
-
-eval "$(starship init zsh)"
-
-eval "$(zoxide init zsh )"
-
-eval "$(fzf --zsh)"
-
-eval "$(direnv hook zsh)"
-#: }}}
-
 #: Autocomplete {{{
 fpath=($HOME/.zfunc $fpath)  # Add custom completions to fpath
 
@@ -73,4 +54,23 @@ zstyle ':completion:*' menu select          # 使用菜单选择补全项
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"  # 颜色支持
 zstyle ':completion:*' group-name ''       # 对补全项分组
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'  # 不区分大小写
+#: }}}
+
+#: Plugins {{{
+eval "$(sheldon source)"
+
+# eval "$(iris init zsh)"
+
+# export DEJA_CYCLE_KEY=''
+# eval "$(deja init zsh)"
+
+# eval "$(zsh-patina activate)"
+
+eval "$(starship init zsh)"
+
+eval "$(zoxide init zsh )"
+
+eval "$(fzf --zsh)"
+
+eval "$(direnv hook zsh)"
 #: }}}
