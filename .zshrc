@@ -37,6 +37,7 @@ unset env_file
 #: Aliases {{{
 alias e='nvim'
 alias g='git'
+alias hx='helix'
 alias ls='ls --color=auto'
 alias lt='eza --tree'
 alias la='eza -a'
@@ -50,15 +51,33 @@ fpath=($HOME/.zfunc $fpath)  # Add custom completions to fpath
 
 autoload -Uz compinit && compinit
 
-zstyle ':completion:*' menu select          # 使用菜单选择补全项
+zstyle ':completion:*' menu no          # select: 使用菜单选择补全项 / no: 只列出选项不选择
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"  # 颜色支持
 zstyle ':completion:*' group-name ''       # 对补全项分组
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'  # 不区分大小写
+
+# Settings for fzf-tab
+# disable sort when completing `git checkout`
+zstyle ':completion:*:git-checkout:*' sort false
+# set descriptions format to enable group support
+# NOTE: don't use escape sequences (like '%F{red}%d%f') here, fzf-tab will ignore them
+zstyle ':completion:*:descriptions' format '[%d]'
+# preview directory's content with eza when completing cd
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --color=always $realpath'
+# custom fzf flags
+# NOTE: fzf-tab does not follow FZF_DEFAULT_OPTS by default
+zstyle ':fzf-tab:*' fzf-flags --color=fg:1,fg+:2 --bind=tab:accept
+# To make fzf-tab follow FZF_DEFAULT_OPTS.
+# NOTE: This may lead to unexpected behavior since some flags break this plugin. See Aloxaf/fzf-tab#455.
+zstyle ':fzf-tab:*' use-fzf-default-opts yes
+# switch group using `<` and `>`
+zstyle ':fzf-tab:*' switch-group '<' '>'
 #: }}}
 
 #: Plugins {{{
 eval "$(sheldon source)"
 
+# Auto-complete, autosuggestions and syntax hilight: replace sheldon
 # eval "$(iris init zsh)"
 
 # export DEJA_CYCLE_KEY=''
@@ -72,5 +91,5 @@ eval "$(zoxide init zsh )"
 
 eval "$(fzf --zsh)"
 
-eval "$(direnv hook zsh)"
+eval "$(mise activate zsh)"
 #: }}}
