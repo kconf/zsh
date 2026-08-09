@@ -47,7 +47,7 @@ alias o='xdg-open'
 #: }}}
 
 #: Autocomplete {{{
-fpath=($HOME/.zfunc $fpath)  # Add custom completions to fpath
+fpath+=($HOME/.zfunc)  # Add custom completions to fpath
 
 autoload -Uz compinit && compinit
 
@@ -76,14 +76,6 @@ zstyle ':fzf-tab:*' switch-group '<' '>'
 
 #: Plugins {{{
 eval "$(sheldon source)"
-
-# Auto-complete, autosuggestions and syntax hilight: replace sheldon
-# eval "$(iris init zsh)"
-
-# export DEJA_CYCLE_KEY=''
-# eval "$(deja init zsh)"
-
-# eval "$(zsh-patina activate)"
 
 eval "$(starship init zsh)"
 
