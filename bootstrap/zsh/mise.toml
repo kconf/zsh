@@ -5,6 +5,7 @@
 "pacman:eza" = "latest"
 "pacman:zellij" = "latest"
 "pacman:sheldon" = "latest"
+"pacman:chafa" = "latest"
 
 # Yazi and its optional dependencies
 "pacman:yazi" = "latest"
