@@ -1,0 +1,30 @@
+[bootstrap.packages]
+# Shell and command-line tools
+"pacman:zsh" = "latest"
+"pacman:starship" = "latest"
+"pacman:eza" = "latest"
+"pacman:zellij" = "latest"
+"pacman:sheldon" = "latest"
+
+# Yazi and its optional dependencies
+"pacman:yazi" = "latest"
+"pacman:ffmpeg" = "latest"
+"pacman:7zip" = "latest"
+"pacman:jq" = "latest"
+"pacman:poppler" = "latest"
+"pacman:fd" = "latest"
+"pacman:ripgrep" = "latest"
+"pacman:fzf" = "latest"
+"pacman:zoxide" = "latest"
+"pacman:resvg" = "latest"
+"pacman:imagemagick" = "latest"
+
+# Archive tools
+"pacman:unarchiver" = "latest"
+"pacman:zip" = "latest"
+"pacman:unzip" = "latest"
+
+# Image and document viewers
+"pacman:nsxiv" = "latest"
+"pacman:zathura" = "latest"
+"pacman:zathura-pdf-mupdf" = "latest"
