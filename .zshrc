@@ -37,13 +37,16 @@ unset env_file
 #: Aliases {{{
 alias e='nvim'
 alias g='git'
-alias hx='helix'
 alias ls='ls --color=auto'
 alias lt='eza --tree'
 alias la='eza -a'
 alias ll='eza -l'
 alias lla='eza -la'
 alias o='xdg-open'
+
+if (( ! $+commands[hx] )); then
+  alias hx='helix'
+fi
 #: }}}
 
 #: Autocomplete {{{
