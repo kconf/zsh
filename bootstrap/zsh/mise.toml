@@ -24,8 +24,3 @@
 "pacman:unarchiver" = "latest"
 "pacman:zip" = "latest"
 "pacman:unzip" = "latest"
-
-# Image and document viewers
-"pacman:nsxiv" = "latest"
-"pacman:zathura" = "latest"
-"pacman:zathura-pdf-mupdf" = "latest"
