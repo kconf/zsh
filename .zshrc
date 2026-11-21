@@ -43,10 +43,6 @@ alias la='eza -a'
 alias ll='eza -l'
 alias lla='eza -la'
 alias o='xdg-open'
-
-if (( ! $+commands[hx] )); then
-  alias hx='helix'
-fi
 #: }}}
 
 #: Autocomplete {{{
